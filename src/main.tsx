@@ -1,5 +1,15 @@
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
+import { BrowserRouter as Router } from "react-router-dom";
+
 import "./main.scss";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(<App />);
+import App from "./App";
+import { AppProvider } from "./context/appContext";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <Router>
+    <AppProvider>
+      <App />
+    </AppProvider>
+  </Router>
+);

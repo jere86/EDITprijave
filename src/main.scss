@@ -5,6 +5,7 @@
 }
 
 body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
@@ -14,10 +15,9 @@ body {
 
 #root {
   width: 100%;
-  min-width: 768px;
+  min-width: 320px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }

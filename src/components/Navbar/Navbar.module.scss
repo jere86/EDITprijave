@@ -1,0 +1,150 @@
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+  padding: 0 2rem;
+  color: #0087ad;
+  background-color: rgba(0, 135, 173, 0.15);
+  user-select: none;
+  box-shadow: 0rem 0rem 1rem -0.25rem #0087ad;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    img {
+      height: 3rem;
+    }
+  }
+
+  .links {
+    display: flex;
+    margin: 0 auto;
+    gap: 1rem;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: bold;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 1rem 0.5rem;
+      border-radius: 0.25rem;
+      transition: 0.5s;
+    }
+
+    a.active {
+      background-color: #0087ad;
+      color: white;
+    }
+
+    a:hover {
+      background-color: #0087ada6;
+      color: white;
+    }
+  }
+
+  .switch {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: gray;
+    transition: 0.5s;
+  }
+
+  .blue {
+    color: #0087ad;
+  }
+
+  .nav_btn {
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    display: none;
+    height: 3rem;
+
+    .bars {
+      color: #0087ad;
+      height: 100%;
+      width: 100%;
+      &:hover {
+        color: #0087adbf;
+      }
+    }
+
+    .times {
+      color: white;
+      height: 100%;
+      width: 100%;
+      &:hover {
+        scale: 1.25;
+      }
+    }
+  }
+
+  .nav_close_btn {
+    position: absolute;
+    left: 2rem;
+    top: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar {
+    .nav_btn {
+      display: flex;
+    }
+
+    .logo {
+      margin: 0 auto;
+    }
+
+    .links {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 4rem 0 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: 1s;
+
+      a {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        color: white;
+      }
+    }
+
+    .responsive {
+      top: 0;
+      height: 100vh;
+      transition: 1s;
+      background-color: hsla(195, 91%, 35%, 0.85);
+      z-index: 2;
+    }
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .switch {
+    flex-direction: column;
+    span {
+      margin-bottom: -0.5rem;
+    }
+  }
+}
