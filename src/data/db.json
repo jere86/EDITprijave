@@ -1,0 +1,511 @@
+{
+  "radionice": [
+    {
+      "id": "1",
+      "title": "Uvod u React Hooks",
+      "date": "01.01.2025.",
+      "lecturer": "Ana Kovač",
+      "description": "Ova radionica će vas upoznati s najnovijim konceptima React Hooks-a. Naučit ćete kako koristiti useState, useEffect i ostale hooks za upravljanje stanjem u React aplikacijama.",
+      "applicants": [],
+      "topic": "React",
+      "difficulty": "Junior",
+      "imageURL": "favicon.ico",
+      "organization": "WebSolutions Inc."
+    },
+    {
+      "id": "2",
+      "title": "Napredno rutiranje u Expressu",
+      "date": "02.01.2025.",
+      "lecturer": "Marta Babić",
+      "description": "Ova napredna radionica fokusira se na kompleksnije koncepte rutinga u Express-u. Naučit ćete kako koristiti parametre, middleware i različite HTTP metode za izgradnju moćnih API-ja.",
+      "applicants": [],
+      "topic": "Express",
+      "difficulty": "Mid",
+      "imageURL": "favicon.ico",
+      "organization": "WebInnovators"
+    },
+    {
+      "id": "3",
+      "title": "Server-side rendering s Next.js",
+      "date": "03.01.2025.",
+      "lecturer": "Ana Kovač",
+      "description": "Ova radionica istražuje napredne koncepte server-side rendering-a u Next.js aplikacijama. Naučit ćete kako optimizirati performanse i poboljšati SEO koristeći SSR.",
+      "applicants": [],
+      "topic": "NextJS",
+      "difficulty": "Senior",
+      "imageURL": "favicon.ico",
+      "organization": "WebSolutions Inc."
+    },
+    {
+      "id": "4",
+      "title": "Rukovanje obrascima u Reactu",
+      "date": "04.01.2025.",
+      "lecturer": "Marta Babić",
+      "description": "Ova praktična radionica fokusira se na rukovanje formama u React-u. Naučit ćete kako upravljati kontrolnim elementima, rukovati podacima forme i implementirati validaciju.",
+      "applicants": [],
+      "topic": "React",
+      "difficulty": "Mid",
+      "imageURL": "favicon.ico",
+      "organization": "WebInnovators"
+    },
+    {
+      "id": "5",
+      "title": "Autentikacija s Passport.js",
+      "date": "05.01.2025.",
+      "lecturer": "Marko Petrović",
+      "description": "Ova radionica pokriva autentikaciju u Express aplikacijama koristeći Passport.js. Naučit ćete kako implementirati lokalnu autentikaciju, OAuth strategije i još mnogo toga.",
+      "applicants": [],
+      "topic": "Express",
+      "difficulty": "Mid",
+      "imageURL": "favicon.ico",
+      "organization": "TechGenius"
+    },
+    {
+      "id": "6",
+      "title": "Izgradnja API-ja s Expressom",
+      "date": "06.01.2025.",
+      "lecturer": "Marko Petrović",
+      "description": "Ova praktična radionica fokusira se na izgradnju RESTful API-ja koristeći Express. Naučit ćete kako definirati rute, obraditi zahtjeve i upravljati bazom podataka.",
+      "applicants": [],
+      "topic": "Express",
+      "difficulty": "Junior",
+      "imageURL": "favicon.ico",
+      "organization": "TechGenius"
+    },
+    {
+      "id": "7",
+      "title": "Upravljanje stanjem u Reactu s Reduxom",
+      "date": "07.01.2025.",
+      "lecturer": "Ivan Horvat",
+      "description": "Ova radionica istražuje napredne tehnike upravljanja stanjem u React aplikacijama koristeći Redux. Naučit ćete kako organizirati stanje, koristiti akcije i smanjiti složenost aplikacije.",
+      "applicants": [],
+      "topic": "React",
+      "difficulty": "Senior",
+      "imageURL": "favicon.ico",
+      "organization": "WP Experts"
+    },
+    {
+      "id": "8",
+      "title": "Autentikacija u React aplikacijama s JWT-om",
+      "date": "08.01.2025.",
+      "lecturer": "Ivan Horvat",
+      "description": "Ova radionica istražuje autentikaciju u React aplikacijama koristeći JWT. Naučit ćete kako generirati i verificirati JWT tokene te ih koristiti za sigurnu komunikaciju s backendom.",
+      "applicants": [],
+      "topic": "React",
+      "difficulty": "Mid",
+      "imageURL": "favicon.ico",
+      "organization": "WP Experts"
+    },
+    {
+      "id": "9",
+      "title": "Asinkrono programiranje u Expressu s Promiseima",
+      "date": "09.01.2025.",
+      "lecturer": "Marko Petrović",
+      "description": "Ova radionica istražuje asinkrono programiranje u Express aplikacijama koristeći promise-e. Naučit ćete kako rukovati asinkronim zahtjevima, izbjegavati callback hell i povećati čitljivost koda.",
+      "applicants": [],
+      "topic": "Express",
+      "difficulty": "Mid",
+      "imageURL": "favicon.ico",
+      "organization": "TechGenius"
+    },
+    {
+      "id": "10",
+      "title": "Tehnike optimizacije performansi u React aplikacijama",
+      "date": "10.01.2025.",
+      "lecturer": "Ivan Horvat",
+      "description": "Ova radionica fokusira se na optimizaciju performanse u React aplikacijama. Naučit ćete kako koristiti memoization, lazy loading i druge tehnike za poboljšanje performanse.",
+      "applicants": [],
+      "topic": "React",
+      "difficulty": "Senior",
+      "imageURL": "favicon.ico",
+      "organization": "WP Experts"
+    },
+    {
+      "id": "11",
+      "title": "Upravljanje Greškama u Express Aplikacijama",
+      "date": "11.01.2025.",
+      "lecturer": "Marko Petrović",
+      "description": "Ova radionica istražuje kako upravljati greškama u Express aplikacijama. Naučit ćete kako implementirati globalni error handler, obraditi različite vrste grešaka i osigurati robustnost aplikacije.",
+      "applicants": [],
+      "topic": "Express",
+      "difficulty": "Mid",
+      "imageURL": "favicon.ico",
+      "organization": "TechGenius"
+    },
+    {
+      "id": "12",
+      "title": "Testiranje React Komponenti s Jest-om",
+      "date": "12.01.2025.",
+      "lecturer": "Marta Babić",
+      "description": "Ova radionica istražuje testiranje React komponenti koristeći Jest. Naučit ćete kako pisati unit i integracijske testove, koristiti mock-ove i snapshot testiranje.",
+      "applicants": [],
+      "topic": "React",
+      "difficulty": "Mid",
+      "imageURL": "favicon.ico",
+      "organization": "WebInnovators"
+    },
+    {
+      "id": "13",
+      "title": "RESTful API-ji s Node.js-om i Express-om",
+      "date": "13.01.2025.",
+      "lecturer": "Marta Babić",
+      "description": "Ova radionica fokusira se na izgradnju RESTful API-ja koristeći Node.js i Express. Naučit ćete kako dizajnirati API-je, implementirati CRUD operacije i rukovati autentikacijom.",
+      "applicants": [],
+      "topic": "Express",
+      "difficulty": "Senior",
+      "imageURL": "favicon.ico",
+      "organization": "WebInnovators"
+    },
+    {
+      "id": "14",
+      "title": "Upravljanje Stanjem s Context API-jem",
+      "date": "14.01.2025.",
+      "lecturer": "Marta Babić",
+      "description": "Ova radionica istražuje upravljanje stanjem u React aplikacijama koristeći Context API. Naučit ćete kako koristiti Context za dijeljenje podataka između komponenti bez potrebe za prop drilling-om.",
+      "applicants": [],
+      "topic": "React",
+      "difficulty": "Junior",
+      "imageURL": "favicon.ico",
+      "organization": "WebInnovators"
+    },
+    {
+      "id": "15",
+      "title": "Napredno Rutiranje u React-u s React Router-om",
+      "date": "15.01.2025.",
+      "lecturer": "Marta Babić",
+      "description": "Ova napredna radionica fokusira se na kompleksnije koncepte rutiranja u React aplikacijama koristeći React Router. Naučit ćete kako koristiti dinamičke rute, nested routes i još mnogo toga.",
+      "applicants": [],
+      "topic": "React",
+      "difficulty": "Mid",
+      "imageURL": "favicon.ico",
+      "organization": "WebInnovators"
+    },
+    {
+      "id": "16",
+      "title": "Osiguravanje Express Aplikacija s Helmet-om",
+      "date": "16.01.2025.",
+      "lecturer": "Marta Babić",
+      "description": "Ova radionica istražuje sigurnost u Express aplikacijama koristeći Helmet. Naučit ćete kako implementirati različite sigurnosne politike, zaštiti aplikaciju od poznatih sigurnosnih ranjivosti.",
+      "applicants": [],
+      "topic": "Express",
+      "difficulty": "Senior",
+      "imageURL": "favicon.ico",
+      "organization": "WebInnovators"
+    },
+    {
+      "id": "17",
+      "title": "Tehnike Optimizacije Performansi u React Aplikacijama",
+      "date": "17.01.2025.",
+      "lecturer": "Marta Babić",
+      "description": "Ova radionica istražuje različite tehnike za optimizaciju performanse React aplikacija. Naučit ćete kako koristiti memoization, virtualizaciju, code splitting i druge tehnike za poboljšanje performansi.",
+      "applicants": [],
+      "topic": "React",
+      "difficulty": "Senior",
+      "imageURL": "favicon.ico",
+      "organization": "WebInnovators"
+    },
+    {
+      "id": "18",
+      "title": "Uvod u MongoDB s Mongoose-om",
+      "date": "18.01.2025.",
+      "lecturer": "Marko Petrović",
+      "description": "Ova radionica uvodi vas u MongoDB bazu podataka koristeći Mongoose. Naučit ćete kako uspostaviti vezu s bazom podataka, definirati modele i izvršiti osnovne CRUD operacije.",
+      "applicants": [],
+      "topic": "Express",
+      "difficulty": "Junior",
+      "imageURL": "favicon.ico",
+      "organization": "TechGenius"
+    },
+    {
+      "id": "19",
+      "title": "Izgradnja Realno-vremenskih Aplikacija s Socket.io",
+      "date": "19.01.2025.",
+      "lecturer": "Marko Petrović",
+      "description": "Ova radionica fokusira se na izgradnju realno-vremenskih aplikacija koristeći Socket.io. Naučit ćete kako implementirati WebSocket komunikaciju, stvarati sobe i emitirati događaje.",
+      "applicants": [],
+      "topic": "Express",
+      "difficulty": "Mid",
+      "imageURL": "favicon.ico",
+      "organization": "TechGenius"
+    },
+    {
+      "id": "20",
+      "title": "Deployanje React Aplikacija u Produkciju",
+      "date": "20.01.2025.",
+      "lecturer": "Ana Kovač",
+      "description": "Ova radionica istražuje različite tehnike za deploy React aplikacija u produkcijsko okruženje. Naučit ćete kako optimizirati aplikaciju za produkciju, koristiti CI/CD pipeline i izabrati pravilni hosting provider.",
+      "applicants": [],
+      "topic": "React",
+      "difficulty": "Senior",
+      "imageURL": "favicon.ico",
+      "organization": "WebSolutions Inc."
+    },
+    {
+      "id": "21",
+      "title": "Izgradnja Dinamičkih Web Stranica s PHP-om",
+      "date": "21.01.2025.",
+      "lecturer": "Elena Novak",
+      "description": "Ova radionica istražuje izgradnju dinamičkih web stranica koristeći PHP. Naučit ćete kako koristiti PHP za generiranje dinamičkog sadržaja, rad s bazom podataka i upravljanje sesijama.",
+      "applicants": [],
+      "topic": "PHP",
+      "difficulty": "Junior",
+      "imageURL": "favicon.ico",
+      "organization": "CodeCrafters Ltd."
+    },
+    {
+      "id": "22",
+      "title": "Razvoj Tema za Wordpress",
+      "date": "22.01.2025.",
+      "lecturer": "Ivan Horvat",
+      "description": "Ova radionica istražuje izradu tema za Wordpress. Naučit ćete kako dizajnirati i implementirati prilagođene teme koristeći HTML, CSS, PHP i WordPress API.",
+      "applicants": [],
+      "topic": "Wordpress",
+      "difficulty": "Mid",
+      "imageURL": "favicon.ico",
+      "organization": "WP Experts"
+    },
+    {
+      "id": "23",
+      "title": "Uvod u PHP Programiranje",
+      "date": "25.02.2025.",
+      "lecturer": "Elena Novak",
+      "description": "Ova radionica pruža početnički prijateljski uvod u PHP programiranje. Polaznici će naučiti osnove PHP sintakse, varijable, kontrolne strukture i funkcije.",
+      "applicants": [],
+      "topic": "PHP",
+      "difficulty": "Junior",
+      "imageURL": "favicon.ico",
+      "organization": "CodeCrafters Ltd."
+    },
+    {
+      "id": "24",
+      "title": "Napredno Korištenje React Redux-a",
+      "date": "26.02.2025.",
+      "lecturer": "Ivan Horvat",
+      "description": "Ova napredna radionica istražuje dublje koncepte upotrebe React Redux-a za upravljanje stanjem u velikim aplikacijama. Naučit ćete kako implementirati middleware, selektore i raditi s asinkronim akcijama.",
+      "applicants": [],
+      "topic": "React",
+      "difficulty": "Senior",
+      "imageURL": "favicon.ico",
+      "organization": "WP Experts"
+    },
+    {
+      "id": "25",
+      "title": "Izrada CMS-a s Laravel-om",
+      "date": "27.02.2025.",
+      "lecturer": "Elena Novak",
+      "description": "Ova radionica istražuje izradu CMS-a (Content Management System) koristeći Laravel. Naučit ćete kako koristiti Laravel-ovu arhitekturu za izradu sigurnih, skalabilnih i jednostavnih za održavanje CMS aplikacija.",
+      "applicants": [],
+      "topic": "Laravel",
+      "difficulty": "Mid",
+      "imageURL": "favicon.ico",
+      "organization": "CodeCrafters Ltd."
+    }
+  ],
+  "predavaci": [
+    {
+      "id": "1",
+      "name": "Marta Babić",
+      "bio": "Marta je stručnjakinja za frontend razvoj s fokusom na React i modernim web tehnologijama. Voli eksperimentirati s novim alatima i tehnologijama kako bi stvorila inovativne korisničke doživljaje.",
+      "organization": "WebInnovators",
+      "topics": ["React", "Express"],
+      "imageURL": "favicon.ico"
+    },
+    {
+      "id": "2",
+      "name": "Ana Kovač",
+      "bio": "Ana je strastvena React developerica s dugogodišnjim iskustvom u izradi kompleksnih korisničkih sučelja. Njen fokus je na stvaranju interaktivnih i optimiziranih korisničkih iskustava.",
+      "organization": "WebSolutions Inc.",
+      "topics": ["React", "NextJS"],
+      "imageURL": "favicon.ico"
+    },
+    {
+      "id": "3",
+      "name": "Marko Petrović",
+      "bio": "Marko je iskusan Express developer s jakim poznavanjem arhitekture backend-a. Uživa u optimizaciji performansi i skalabilnosti web aplikacija.",
+      "organization": "TechGenius",
+      "topics": ["Express", "NextJS"],
+      "imageURL": "favicon.ico"
+    },
+    {
+      "id": "4",
+      "name": "Elena Novak",
+      "bio": "Elena je stručnjakinja za PHP s iskustvom u izgradnji dinamičkih web stranica i web aplikacija. Njena strast leži u kreiranju elegantnog i efikasnog koda.",
+      "organization": "CodeCrafters Ltd.",
+      "topics": ["PHP", "WordPress"],
+      "imageURL": "favicon.ico"
+    },
+    {
+      "id": "5",
+      "name": "Ivan Horvat",
+      "bio": "Ivan je entuzijastični WordPress developer koji voli istraživati različite aspekte izrade prilagođenih tema i dodataka. Svoje znanje rado dijeli s drugima kako bi zajedno unaprijedili svoje vještine.",
+      "organization": "WP Experts",
+      "topics": ["WordPress", "React"],
+      "imageURL": "favicon.ico"
+    }
+  ],
+  "organizacije": [
+    {
+      "id": "WebSolutions Inc.",
+      "name": "WebSolutions Inc.",
+      "description": "WebSolutions Inc. is an innovative company focusing on the development of modern web applications and solutions. Our team of experts is dedicated to providing high-quality services and creating standout user experiences.",
+      "workshops": [
+        {
+          "id": "1",
+          "title": "Uvod u React Hooks"
+        },
+        {
+          "id": "3",
+          "title": "Server-side rendering s Next.js"
+        },
+        {
+          "id": "20",
+          "title": "Deployanje React Aplikacija u Produkciju"
+        }
+      ]
+    },
+    {
+      "id": "WebInnovators",
+      "name": "WebInnovators",
+      "description": "Placeholder description for WebInnovators.",
+      "workshops": [
+        {
+          "id": "2",
+          "title": "Napredno rutiranje u Expressu"
+        },
+        {
+          "id": "4",
+          "title": "Rukovanje obrascima u Reactu"
+        },
+        {
+          "id": "12",
+          "title": "Testiranje React Komponenti s Jest-om"
+        },
+        {
+          "id": "13",
+          "title": "RESTful API-ji s Node.js-om i Express-om"
+        },
+        {
+          "id": "14",
+          "title": "Upravljanje Stanjem s Context API-jem"
+        },
+        {
+          "id": "15",
+          "title": "Napredno Rutiranje u React-u s React Router-om"
+        },
+        {
+          "id": "16",
+          "title": "Osiguravanje Express Aplikacija s Helmet-om"
+        },
+        {
+          "id": "17",
+          "title": "Tehnike Optimizacije Performansi u React Aplikacijama"
+        }
+      ]
+    },
+    {
+      "id": "TechGenius",
+      "name": "TechGenius",
+      "description": "Placeholder description for TechGenius.",
+      "workshops": [
+        {
+          "id": "5",
+          "title": "Autentikacija s Passport.js"
+        },
+        {
+          "id": "6",
+          "title": "Izgradnja API-ja s Expressom"
+        },
+        {
+          "id": "9",
+          "title": "Asinkrono programiranje u Expressu s Promiseima"
+        },
+        {
+          "id": "11",
+          "title": "Upravljanje Greškama u Express Aplikacijama"
+        },
+        {
+          "id": "19",
+          "title": "Izgradnja Realno-vremenskih Aplikacija s Socket.io"
+        }
+      ]
+    },
+    {
+      "id": "WP Experts",
+      "name": "WP Experts",
+      "description": "Placeholder description for WP Experts.",
+      "workshops": [
+        {
+          "id": "7",
+          "title": "Upravljanje stanjem u Reactu s Reduxom"
+        },
+        {
+          "id": "8",
+          "title": "Autentikacija u React aplikacijama s JWT-om"
+        },
+        {
+          "id": "10",
+          "title": "Tehnike optimizacije performansi u React aplikacijama"
+        },
+        {
+          "id": "24",
+          "title": "Napredno Korištenje React Redux-a"
+        }
+      ]
+    },
+    {
+      "id": "CodeCrafters Ltd.",
+      "name": "CodeCrafters Ltd.",
+      "description": "Placeholder description for CodeCrafters Ltd.",
+      "workshops": [
+        {
+          "id": "21",
+          "title": "Izgradnja Dinamičkih Web Stranica s PHP-om"
+        },
+        {
+          "id": "23",
+          "title": "Uvod u PHP Programiranje"
+        },
+        {
+          "id": "25",
+          "title": "Izrada CMS-a s Laravel-om"
+        }
+      ]
+    }
+  ],
+  "teme": [
+    {
+      "id": "1",
+      "name": "React"
+    },
+    {
+      "id": "2",
+      "name": "Express"
+    },
+    {
+      "id": "3",
+      "name": "NextJS"
+    },
+    {
+      "id": "4",
+      "name": "PHP"
+    },
+    {
+      "id": "5",
+      "name": "WordPress"
+    }
+  ],
+  "tezine": [
+    {
+      "id": "1",
+      "name": "Junior"
+    },
+    {
+      "id": "2",
+      "name": "Mid"
+    },
+    {
+      "id": "3",
+      "name": "Senior"
+    }
+  ]
+}

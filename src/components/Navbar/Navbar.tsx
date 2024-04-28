@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { IconContext } from "react-icons";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -6,9 +6,9 @@ import { Switch } from "@mui/material";
 import { useAppContext } from "../../context/appContext";
 import styles from "./Navbar.module.scss";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const navRef = useRef<HTMLDivElement>(null);
-  const { showAdminPage, toggleAdminPage } = useAppContext();
+  const { showAdmin, toggleAdmin } = useAppContext();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -19,10 +19,10 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    if (!showAdminPage && location.pathname === "/administracija") {
+    if (!showAdmin && location.pathname === "/administracija") {
       navigate("/");
     }
-  }, [showAdminPage, location.pathname, navigate]);
+  }, [showAdmin, location.pathname, navigate]);
 
   return (
     <div className={styles.navbar}>
@@ -52,10 +52,12 @@ const Navbar = () => {
         <NavLink
           to="/administracija"
           onClick={showNavbar}
-          className={({ isActive }) => (isActive ? styles.active : "")}
+          className={({ isActive }) =>
+            isActive ? `${styles.adminOn}` : `${styles.admin}`
+          }
           style={{
-            pointerEvents: showAdminPage ? "auto" : "none",
-            opacity: showAdminPage ? 1 : 0,
+            pointerEvents: showAdmin ? "auto" : "none",
+            opacity: showAdmin ? 1 : 0,
           }}
         >
           ADMINISTRACIJA
@@ -71,14 +73,15 @@ const Navbar = () => {
       </div>
       <div
         className={
-          showAdminPage ? `${styles.switch} ${styles.blue}` : styles.switch
+          showAdmin ? `${styles.switch} ${styles.orange}` : styles.switch
         }
       >
         <span>ADMIN</span>
         <Switch
-          checked={showAdminPage}
-          onChange={toggleAdminPage}
+          checked={showAdmin}
+          onChange={toggleAdmin}
           inputProps={{ "aria-label": "controlled" }}
+          color="warning"
         />
       </div>
     </div>

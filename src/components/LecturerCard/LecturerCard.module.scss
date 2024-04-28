@@ -1,0 +1,65 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  border-radius: 0.5rem;
+  border: 2px solid #0087ad;
+  padding: 1rem;
+  background: linear-gradient(
+    0deg,
+    rgba(128, 128, 128, 0.15) 0%,
+    rgba(255, 255, 255) 15%
+  );
+
+  .image {
+    width: 10rem;
+    height: 10rem;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .data {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 10rem);
+    padding: 0.5rem 1rem 3rem;
+
+    h1 {
+      margin-right: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      max-width: 500px;
+      margin: 0.25rem 0;
+    }
+
+    .edit {
+      all: unset;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.25rem;
+      background-color: #ed6c02;
+      color: white;
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: #f0af7a;
+        color: white;
+      }
+    }
+  }
+}

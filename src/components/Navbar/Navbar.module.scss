@@ -6,9 +6,13 @@
   width: 100%;
   padding: 0 2rem;
   color: #0087ad;
-  background-color: rgba(0, 135, 173, 0.15);
+  background: linear-gradient(
+    0deg,
+    rgba(128, 128, 128, 0.25) 0%,
+    rgba(128, 128, 128, 0.05) 15%,
+    rgba(128, 128, 128, 0.15) 100%
+  );
   user-select: none;
-  box-shadow: 0rem 0rem 1rem -0.25rem #0087ad;
 
   .logo {
     display: flex;
@@ -29,22 +33,38 @@
       color: inherit;
       text-decoration: none;
       font-weight: bold;
-      height: 100%;
       display: flex;
       align-items: center;
-      padding: 1rem 0.5rem;
+      padding: 0.75rem;
       border-radius: 0.25rem;
       transition: 0.5s;
+
+      &:hover {
+        background-color: #0087ada6;
+        color: white;
+      }
     }
 
-    a.active {
+    .active {
       background-color: #0087ad;
       color: white;
     }
 
-    a:hover {
-      background-color: #0087ada6;
+    .admin {
+      color: #ed6c02;
+    }
+
+    .adminOn {
+      background-color: #ed6c02;
       color: white;
+    }
+
+    .admin,
+    .adminOn {
+      &:hover {
+        background-color: #f0af7a;
+        color: white;
+      }
     }
   }
 
@@ -56,8 +76,8 @@
     transition: 0.5s;
   }
 
-  .blue {
-    color: #0087ad;
+  .orange {
+    color: #ed6c02;
   }
 
   .nav_btn {
@@ -88,18 +108,18 @@
       }
     }
   }
-
-  .nav_close_btn {
-    position: absolute;
-    left: 2rem;
-    top: 0.5rem;
-  }
 }
 
 @media only screen and (max-width: 767px) {
   .navbar {
     .nav_btn {
       display: flex;
+    }
+
+    .nav_close_btn {
+      position: absolute;
+      left: 2rem;
+      top: 0.5rem;
     }
 
     .logo {
@@ -122,11 +142,13 @@
 
       a {
         width: 100%;
+        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 2rem;
         color: white;
+        background: none;
       }
     }
 

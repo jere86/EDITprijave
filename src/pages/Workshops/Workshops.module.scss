@@ -1,0 +1,67 @@
+.workshop {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem 0;
+  width: 100%;
+
+  .add {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 3rem;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    .admin_btn {
+      all: unset;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      width: 5rem;
+      height: 3rem;
+      border-radius: 0.25rem;
+      background-color: #ed6c02;
+      color: white;
+
+      svg {
+        margin-left: 0.25rem;
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: #f0af7a;
+        color: white;
+      }
+    }
+  }
+
+  .view {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: calc(100vh - 5rem);
+
+    .filters {
+      width: 15%;
+    }
+
+    .list {
+      overflow: scroll;
+      width: 85%;
+      max-width: max-content;
+      scrollbar-width: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-gap: 1rem;
+      padding-bottom: 1rem;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
