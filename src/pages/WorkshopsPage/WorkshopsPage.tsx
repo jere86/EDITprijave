@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { GrWorkshop } from "react-icons/gr";
 
 import { useAppContext } from "../../context/appContext";
-import styles from "./Workshops.module.scss";
+import styles from "./WorkshopsPage.module.scss";
 import WorkshopCard from "../../components/WorkshopCard/WorkshopCard";
 import Filters from "../../components/Filter/Filter";
 
@@ -15,7 +15,7 @@ interface Filters {
   [key: string]: boolean;
 }
 
-const Workshop: React.FC = () => {
+const WorkshopPage: React.FC = () => {
   const { workshops, showAdmin } = useAppContext();
   const [topicFiltersData, setTopicFiltersData] = useState<FilterOption[]>([]);
   const [difficultyFiltersData, setDifficultyFiltersData] = useState<
@@ -137,4 +137,4 @@ const Workshop: React.FC = () => {
   );
 };
 
-export default Workshop;
+export default WorkshopPage;

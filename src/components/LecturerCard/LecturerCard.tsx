@@ -3,6 +3,7 @@ import { FiEdit3 } from "react-icons/fi";
 import { Lecturer, useAppContext } from "../../context/appContext";
 
 import styles from "./LecturerCard.module.scss";
+import { Link } from "react-router-dom";
 
 interface LecturerCardProps {
   data: Lecturer;
@@ -19,15 +20,23 @@ const LecturerCard: React.FC<LecturerCardProps> = ({ data }) => {
       <div className={styles.data}>
         <h1>{data.name}</h1>
         <p>
-          <i>bio:</i> {data.bio}
+          <b>
+            <i>bio: </i>
+          </b>
+          {data.bio}
         </p>
         <p>
-          <i>organizacija:</i> {data.organization}
+          <b>
+            <i>organizacija: </i>
+          </b>
+          {data.organization}
         </p>
         <p>
-          <i>teme:</i>{" "}
-          {data.topics.map((topic) => (
-            <span>{topic} </span>
+          <b>
+            <i>teme: </i>
+          </b>
+          {data.topics.map((topic, id) => (
+            <span key={id}>{topic} </span>
           ))}
         </p>
         {showAdmin && (
@@ -35,7 +44,9 @@ const LecturerCard: React.FC<LecturerCardProps> = ({ data }) => {
             <FiEdit3 />
           </button>
         )}
-        <button>Pregledaj radionice</button>
+        <Link to={`/predavaci/${data.id}`} className={styles.view}>
+          Pregledaj radionice
+        </Link>
       </div>
     </div>
   );

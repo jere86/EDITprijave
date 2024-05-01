@@ -1,0 +1,61 @@
+.lecturerWorkshops {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 100%;
+  height: calc(100vh - 4rem);
+  overflow: scroll;
+  overflow-x: hidden;
+
+  .return_btn {
+    all: unset;
+    align-self: flex-end;
+    height: 2rem;
+    width: 2rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: -3rem;
+    border-radius: 0.25rem;
+    background-color: #0087ada6;
+    color: white;
+
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: #0087ad;
+    }
+  }
+
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0 auto 2rem;
+    text-transform: uppercase;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0087ad;
+    text-transform: uppercase;
+    margin: -1rem auto 1rem;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    grid-gap: 1rem;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+    scrollbar-gutter: stable;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #0087ad;
+  }
+}

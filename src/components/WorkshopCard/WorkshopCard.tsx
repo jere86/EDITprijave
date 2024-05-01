@@ -45,22 +45,40 @@ const WorkshopCard: React.FC<WorkshopCardProps> = ({ data }) => {
         <div className={styles.data}>
           <h1>{data.title}</h1>
           <p>
-            <i>datum:</i> {data.date}
+            <b>
+              <i>datum: </i>
+            </b>
+            {data.date}
           </p>
           <p>
-            <i>opis:</i> {data.description}
+            <b>
+              <i>opis: </i>
+            </b>
+            {data.description}
           </p>
           <p>
-            <i>predavač:</i> {data.lecturer}
+            <b>
+              <i>predavač: </i>
+            </b>
+            {data.lecturer}
           </p>
           <p>
-            <i>tema:</i> {data.topic}
+            <b>
+              <i>tema: </i>
+            </b>
+            {data.topic}
           </p>
           <p>
-            <i>težina:</i> {data.difficulty}
+            <b>
+              <i>težina: </i>
+            </b>
+            {data.difficulty}
           </p>
           <p>
-            <i>br. prijava:</i> {data.applicants.length}
+            <b>
+              <i>br. prijava: </i>
+            </b>
+            {data.applicants.length}
           </p>
           {showAdmin && (
             <button className={styles.edit}>

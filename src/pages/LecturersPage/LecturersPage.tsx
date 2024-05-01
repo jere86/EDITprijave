@@ -4,7 +4,7 @@ import { GrWorkshop } from "react-icons/gr";
 import { useAppContext } from "../../context/appContext";
 import LecturerCard from "../../components/LecturerCard/LecturerCard";
 import Filters from "../../components/Filter/Filter";
-import styles from "../Workshops/Workshops.module.scss";
+import styles from "../WorkshopsPage/WorkshopsPage.module.scss";
 
 interface FilterOption {
   id: string;
@@ -15,7 +15,7 @@ interface Filters {
   [key: string]: boolean;
 }
 
-const Lecturers: React.FC = () => {
+const LecturersPage: React.FC = () => {
   const { lecturers, showAdmin } = useAppContext();
   const [topicFiltersData, setTopicFiltersData] = useState<FilterOption[]>([]);
   const [organizationFiltersData, setOrganizationFiltersData] = useState<
@@ -39,7 +39,7 @@ const Lecturers: React.FC = () => {
         const data = await response.json();
         setOrganizationFiltersData(data);
       } catch (error) {
-        console.error("Error fetching difficulty filters: ", error);
+        console.error("Error fetching organization filters: ", error);
       }
     };
 
@@ -140,4 +140,4 @@ const Lecturers: React.FC = () => {
   );
 };
 
-export default Lecturers;
+export default LecturersPage;

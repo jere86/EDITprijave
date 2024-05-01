@@ -21,7 +21,7 @@ const Filter: React.FC<FilterProps> = ({
 }) => {
   return (
     <div className={styles.filter}>
-      <h3>{filterType.toUpperCase()}</h3>
+      <p className={styles.title}>{filterType.toUpperCase()}:</p>
       <div className={styles.options}>
         {categories.map((filter) => (
           <label key={filter.id}>
@@ -30,7 +30,7 @@ const Filter: React.FC<FilterProps> = ({
               checked={filters[filter.name]}
               onChange={() => onFilterChange(filterType, filter.name)}
             />
-            {filter.name}
+            {filter.name.toUpperCase()}
           </label>
         ))}
       </div>

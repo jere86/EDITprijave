@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import styles from "./SignupModal.module.scss";
 import { Workshop, useAppContext } from "../../context/appContext";
 import { FaTimes } from "react-icons/fa";
-import { IconContext } from "react-icons";
 
 interface SignupModalProps {
   onClose: () => void;
@@ -26,6 +25,19 @@ const SignupModal: React.FC<SignupModalProps> = ({
   const [reason, setReason] = useState("");
   const [error, setError] = useState<boolean>(false);
   const [showThx, setShowThx] = useState<boolean>(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    function handleScroll() {
+      setScrollPosition(window.scrollY);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [fetchWorkshops]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -42,7 +54,12 @@ const SignupModal: React.FC<SignupModalProps> = ({
   };
 
   return (
-    <div className={styles.modal}>
+    <div
+      className={styles.modal}
+      style={{
+        top: `${scrollPosition}px`,
+      }}
+    >
       <div className={showThx ? styles.thx : styles.application}>
         {showThx ? (
           <>
@@ -58,9 +75,7 @@ const SignupModal: React.FC<SignupModalProps> = ({
         ) : (
           <>
             <button onClick={onClose} className={styles.close_btn}>
-              <IconContext.Provider value={{ className: `${styles.times}` }}>
-                <FaTimes />
-              </IconContext.Provider>
+              <FaTimes />
             </button>
             <p>
               prijavi se na radionicu <span>"{data.title}"</span>
