@@ -58,6 +58,15 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
       grid-gap: 1rem;
+
+      .threedots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5rem;
+        border: 2px solid #0087ad;
+        padding: 1rem;
+      }
     }
   }
 

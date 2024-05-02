@@ -1,52 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { GrWorkshop } from "react-icons/gr";
-
-import { useAppContext } from "../../context/appContext";
+import { Lecturer, useAppContext } from "../../context/appContext";
 import LecturerCard from "../../components/LecturerCard/LecturerCard";
 import Filters from "../../components/Filter/Filter";
 import styles from "../WorkshopsPage/WorkshopsPage.module.scss";
-
-interface FilterOption {
-  id: string;
-  name: string;
-}
+import AddEditForm from "../../components/AddEditForm/AddEditForm";
 
 interface Filters {
   [key: string]: boolean;
 }
 
 const LecturersPage: React.FC = () => {
-  const { lecturers, showAdmin } = useAppContext();
-  const [topicFiltersData, setTopicFiltersData] = useState<FilterOption[]>([]);
-  const [organizationFiltersData, setOrganizationFiltersData] = useState<
-    FilterOption[]
-  >([]);
-
-  useEffect(() => {
-    const fetchTopicFiltersData = async () => {
-      try {
-        const response = await fetch("http://localhost:3001/teme");
-        const data = await response.json();
-        setTopicFiltersData(data);
-      } catch (error) {
-        console.error("Error fetching topic filters: ", error);
-      }
-    };
-
-    const fetchOrganizationFiltersData = async () => {
-      try {
-        const response = await fetch("http://localhost:3001/organizacije");
-        const data = await response.json();
-        setOrganizationFiltersData(data);
-      } catch (error) {
-        console.error("Error fetching organization filters: ", error);
-      }
-    };
-
-    fetchTopicFiltersData();
-    fetchOrganizationFiltersData();
-  }, []);
-
+  const { lecturers, organizations, showAdmin, topicsData } = useAppContext();
+  const [showAddEditForm, setShowAddEditForm] = useState(false);
   const [topicFilters, setTopicFilters] = useState<Filters>({
     React: false,
     Express: false,
@@ -54,7 +20,6 @@ const LecturersPage: React.FC = () => {
     PHP: false,
     WordPress: false,
   });
-
   const [organizationFilters, setOrganizationFilters] = useState<Filters>({
     "WebSolutions Inc.": false,
     WebInnovators: false,
@@ -62,27 +27,28 @@ const LecturersPage: React.FC = () => {
     "WP Experts": false,
     "CodeCrafters Ltd.": false,
   });
+  const [filteredLecturers, setFilteredLecturers] = useState<Lecturer[]>([]);
 
-  const filteredLecturers = lecturers
-    ? lecturers.filter((lecturer) => {
-        const topicFiltersSelected = Object.keys(topicFilters).filter(
-          (topic) => topicFilters[topic]
-        );
+  useEffect(() => {
+    const filtered = lecturers?.filter((lecturer) => {
+      const topicFiltersSelected = Object.keys(topicFilters).filter(
+        (topic) => topicFilters[topic]
+      );
+      const topicMatch =
+        topicFiltersSelected.length === 0 ||
+        topicFiltersSelected.some((topic) => lecturer.topics.includes(topic));
 
-        const topicMatch =
-          topicFiltersSelected.length === 0 ||
-          topicFiltersSelected.some((topic) => lecturer.topics.includes(topic));
+      const organizationFiltersSelected = Object.keys(
+        organizationFilters
+      ).filter((organization) => organizationFilters[organization]);
+      const organizationMatch =
+        organizationFiltersSelected.length === 0 ||
+        organizationFiltersSelected.includes(lecturer.organization);
 
-        const organizationFiltersSelected = Object.keys(
-          organizationFilters
-        ).filter((organization) => organizationFilters[organization]);
-        const organizationMatch =
-          organizationFiltersSelected.length === 0 ||
-          organizationFiltersSelected.includes(lecturer.organization);
-
-        return topicMatch && organizationMatch;
-      })
-    : [];
+      return topicMatch && organizationMatch;
+    });
+    setFilteredLecturers(filtered || []);
+  }, [lecturers, topicFilters, organizationFilters]);
 
   const handleFilterChange = (
     filterType: keyof Filters,
@@ -99,13 +65,18 @@ const LecturersPage: React.FC = () => {
         [filterName]: !prevFilters[filterName],
       }));
     }
+    setFilteredLecturers([]);
+  };
+
+  const toggleAddEditForm = () => {
+    setShowAddEditForm((prevShowAddEditForm) => !prevShowAddEditForm);
   };
 
   return (
     <div className={styles.workshop}>
       {showAdmin && (
         <div className={styles.add}>
-          <button className={styles.admin_btn}>
+          <button className={styles.admin_btn} onClick={toggleAddEditForm}>
             +
             <GrWorkshop />
           </button>
@@ -113,29 +84,36 @@ const LecturersPage: React.FC = () => {
       )}
       <div className={styles.view}>
         <div className={styles.filters}>
-          <Filters
-            categories={topicFiltersData}
-            filterType="tema"
-            filters={topicFilters}
-            onFilterChange={handleFilterChange}
-          />
-          <Filters
-            categories={organizationFiltersData}
-            filterType="organizacija"
-            filters={organizationFilters}
-            onFilterChange={handleFilterChange}
-          />
+          {topicsData && (
+            <Filters
+              categories={topicsData}
+              filterType="tema"
+              filters={topicFilters}
+              onFilterChange={handleFilterChange}
+            />
+          )}
+          {organizations && (
+            <Filters
+              categories={organizations}
+              filterType="organizacija"
+              filters={organizationFilters}
+              onFilterChange={handleFilterChange}
+            />
+          )}
         </div>
-        {lecturers === undefined ? (
-          <p>Loading...</p>
-        ) : (
-          <div className={styles.list}>
-            {filteredLecturers.map((lecture) => (
-              <LecturerCard data={lecture} key={lecture.id} />
-            ))}
-          </div>
-        )}
+        <div className={styles.list}>
+          {filteredLecturers.map((lecture) => (
+            <LecturerCard data={lecture} key={lecture.id} />
+          ))}
+        </div>
       </div>
+      {showAddEditForm && (
+        <AddEditForm
+          onClose={() => setShowAddEditForm(false)}
+          itemType="predavaci"
+          mode="add"
+        />
+      )}
     </div>
   );
 };

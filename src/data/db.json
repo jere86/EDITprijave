@@ -3,19 +3,19 @@
     {
       "id": "1",
       "title": "Uvod u React Hooks",
-      "date": "31.01.2024.",
+      "date": "2024-05-31",
       "lecturer": "Ana Kovač",
       "description": "Ova radionica će vas upoznati s najnovijim konceptima React Hooks-a. Naučit ćete kako koristiti useState, useEffect i ostale hooks za upravljanje stanjem u React aplikacijama.",
       "applicants": [],
       "topic": "React",
-      "difficulty": "Junior",
+      "difficulty": "Mid",
       "imageURL": "data:image/jpeg;base64,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",
       "organization": "WebSolutions Inc."
     },
     {
       "id": "2",
       "title": "Napredno rutiranje u Expressu",
-      "date": "02.05.2024.",
+      "date": "2024-05-02",
       "lecturer": "Marta Babić",
       "description": "Ova napredna radionica fokusira se na kompleksnije koncepte rutinga u Express-u. Naučit ćete kako koristiti parametre, middleware i različite HTTP metode za izgradnju moćnih API-ja.",
       "applicants": [],
@@ -27,7 +27,7 @@
     {
       "id": "3",
       "title": "Server-side rendering s Next.js",
-      "date": "03.10.2024.",
+      "date": "2024-08-17",
       "lecturer": "Ana Kovač",
       "description": "Ova radionica istražuje napredne koncepte server-side rendering-a u Next.js aplikacijama. Naučit ćete kako optimizirati performanse i poboljšati SEO koristeći SSR.",
       "applicants": [],
@@ -39,7 +39,7 @@
     {
       "id": "4",
       "title": "Rukovanje obrascima u Reactu",
-      "date": "14.01.2024.",
+      "date": "2024-05-28",
       "lecturer": "Marta Babić",
       "description": "Ova praktična radionica fokusira se na rukovanje formama u React-u. Naučit ćete kako upravljati kontrolnim elementima, rukovati podacima forme i implementirati validaciju.",
       "applicants": [],
@@ -51,7 +51,7 @@
     {
       "id": "5",
       "title": "Autentikacija s Passport.js",
-      "date": "05.11.2024.",
+      "date": "2024-12-12",
       "lecturer": "Marko Petrović",
       "description": "Ova radionica pokriva autentikaciju u Express aplikacijama koristeći Passport.js. Naučit ćete kako implementirati lokalnu autentikaciju, OAuth strategije i još mnogo toga.",
       "applicants": [],
@@ -63,7 +63,7 @@
     {
       "id": "6",
       "title": "Izgradnja API-ja s Expressom",
-      "date": "16.11.2024.",
+      "date": "2024-06-08",
       "lecturer": "Marko Petrović",
       "description": "Ova praktična radionica fokusira se na izgradnju RESTful API-ja koristeći Express. Naučit ćete kako definirati rute, obraditi zahtjeve i upravljati bazom podataka.",
       "applicants": [],
@@ -75,7 +75,7 @@
     {
       "id": "7",
       "title": "Upravljanje stanjem u Reactu s Reduxom",
-      "date": "07.09.2024.",
+      "date": "2024-09-25",
       "lecturer": "Ivan Horvat",
       "description": "Ova radionica istražuje napredne tehnike upravljanja stanjem u React aplikacijama koristeći Redux. Naučit ćete kako organizirati stanje, koristiti akcije i smanjiti složenost aplikacije.",
       "applicants": [],
@@ -87,7 +87,7 @@
     {
       "id": "8",
       "title": "Autentikacija u React aplikacijama s JWT-om",
-      "date": "08.08.2024.",
+      "date": "2024-06-03",
       "lecturer": "Ivan Horvat",
       "description": "Ova radionica istražuje autentikaciju u React aplikacijama koristeći JWT. Naučit ćete kako generirati i verificirati JWT tokene te ih koristiti za sigurnu komunikaciju s backendom.",
       "applicants": [],
@@ -99,7 +99,7 @@
     {
       "id": "9",
       "title": "Asinkrono programiranje u Expressu s Promiseima",
-      "date": "09.03.2024.",
+      "date": "2024-03-14",
       "lecturer": "Marko Petrović",
       "description": "Ova radionica istražuje asinkrono programiranje u Express aplikacijama koristeći promise-e. Naučit ćete kako rukovati asinkronim zahtjevima, izbjegavati callback hell i povećati čitljivost koda.",
       "applicants": [],
@@ -111,7 +111,7 @@
     {
       "id": "10",
       "title": "Tehnike optimizacije performansi u React aplikacijama",
-      "date": "19.05.2024.",
+      "date": "2024-09-20",
       "lecturer": "Ivan Horvat",
       "description": "Ova radionica fokusira se na optimizaciju performanse u React aplikacijama. Naučit ćete kako koristiti memoization, lazy loading i druge tehnike za poboljšanje performanse.",
       "applicants": [],
@@ -123,7 +123,7 @@
     {
       "id": "11",
       "title": "Upravljanje Greškama u Express Aplikacijama",
-      "date": "11.11.2024.",
+      "date": "2025-01-31",
       "lecturer": "Marko Petrović",
       "description": "Ova radionica istražuje kako upravljati greškama u Express aplikacijama. Naučit ćete kako implementirati globalni error handler, obraditi različite vrste grešaka i osigurati robustnost aplikacije.",
       "applicants": [],
@@ -135,7 +135,7 @@
     {
       "id": "12",
       "title": "Testiranje React Komponenti s Jest-om",
-      "date": "02.03.2024.",
+      "date": "2024-02-11",
       "lecturer": "Marta Babić",
       "description": "Ova radionica istražuje testiranje React komponenti koristeći Jest. Naučit ćete kako pisati unit i integracijske testove, koristiti mock-ove i snapshot testiranje.",
       "applicants": [],
@@ -147,7 +147,7 @@
     {
       "id": "13",
       "title": "RESTful API-ji s Node.js-om i Express-om",
-      "date": "13.05.2024.",
+      "date": "2024-05-26",
       "lecturer": "Marta Babić",
       "description": "Ova radionica fokusira se na izgradnju RESTful API-ja koristeći Node.js i Express. Naučit ćete kako dizajnirati API-je, implementirati CRUD operacije i rukovati autentikacijom.",
       "applicants": [],
@@ -159,7 +159,7 @@
     {
       "id": "14",
       "title": "Upravljanje Stanjem s Context API-jem",
-      "date": "24.04.2024.",
+      "date": "2024-02-20",
       "lecturer": "Marta Babić",
       "description": "Ova radionica istražuje upravljanje stanjem u React aplikacijama koristeći Context API. Naučit ćete kako koristiti Context za dijeljenje podataka između komponenti bez potrebe za prop drilling-om.",
       "applicants": [],
@@ -171,7 +171,7 @@
     {
       "id": "15",
       "title": "Napredno Rutiranje u React-u s React Router-om",
-      "date": "25.01.2024.",
+      "date": "2024-01-30",
       "lecturer": "Marta Babić",
       "description": "Ova napredna radionica fokusira se na kompleksnije koncepte rutiranja u React aplikacijama koristeći React Router. Naučit ćete kako koristiti dinamičke rute, nested routes i još mnogo toga.",
       "applicants": [],
@@ -183,7 +183,7 @@
     {
       "id": "16",
       "title": "Osiguravanje Express Aplikacija s Helmet-om",
-      "date": "10.10.2024.",
+      "date": "2024-09-26",
       "lecturer": "Marta Babić",
       "description": "Ova radionica istražuje sigurnost u Express aplikacijama koristeći Helmet. Naučit ćete kako implementirati različite sigurnosne politike, zaštiti aplikaciju od poznatih sigurnosnih ranjivosti.",
       "applicants": [],
@@ -195,7 +195,7 @@
     {
       "id": "17",
       "title": "Tehnike Optimizacije Performansi u React Aplikacijama",
-      "date": "26.07.2024.",
+      "date": "2024-05-16",
       "lecturer": "Marta Babić",
       "description": "Ova radionica istražuje različite tehnike za optimizaciju performanse React aplikacija. Naučit ćete kako koristiti memoization, virtualizaciju, code splitting i druge tehnike za poboljšanje performansi.",
       "applicants": [],
@@ -207,7 +207,7 @@
     {
       "id": "18",
       "title": "Uvod u MongoDB s Mongoose-om",
-      "date": "18.09.2024.",
+      "date": "2024-07-25",
       "lecturer": "Marko Petrović",
       "description": "Ova radionica uvodi vas u MongoDB bazu podataka koristeći Mongoose. Naučit ćete kako uspostaviti vezu s bazom podataka, definirati modele i izvršiti osnovne CRUD operacije.",
       "applicants": [],
@@ -219,7 +219,7 @@
     {
       "id": "19",
       "title": "Izgradnja Realno-vremenskih Aplikacija s Socket.io",
-      "date": "19.10.2024.",
+      "date": "2024-05-20",
       "lecturer": "Marko Petrović",
       "description": "Ova radionica fokusira se na izgradnju realno-vremenskih aplikacija koristeći Socket.io. Naučit ćete kako implementirati WebSocket komunikaciju, stvarati sobe i emitirati događaje.",
       "applicants": [],
@@ -231,7 +231,7 @@
     {
       "id": "20",
       "title": "Deployanje React Aplikacija u Produkciju",
-      "date": "29.11.2024.",
+      "date": "2025-03-13",
       "lecturer": "Ana Kovač",
       "description": "Ova radionica istražuje različite tehnike za deploy React aplikacija u produkcijsko okruženje. Naučit ćete kako optimizirati aplikaciju za produkciju, koristiti CI/CD pipeline i izabrati pravilni hosting provider.",
       "applicants": [],
@@ -243,7 +243,7 @@
     {
       "id": "21",
       "title": "Izgradnja Dinamičkih Web Stranica s PHP-om",
-      "date": "21.01.2024.",
+      "date": "2024-06-22",
       "lecturer": "Elena Novak",
       "description": "Ova radionica istražuje izgradnju dinamičkih web stranica koristeći PHP. Naučit ćete kako koristiti PHP za generiranje dinamičkog sadržaja, rad s bazom podataka i upravljanje sesijama.",
       "applicants": [],
@@ -255,7 +255,7 @@
     {
       "id": "22",
       "title": "Razvoj Tema za Wordpress",
-      "date": "12.04.2024.",
+      "date": "2024-06-02",
       "lecturer": "Ivan Horvat",
       "description": "Ova radionica istražuje izradu tema za Wordpress. Naučit ćete kako dizajnirati i implementirati prilagođene teme koristeći HTML, CSS, PHP i WordPress API.",
       "applicants": [],
@@ -267,7 +267,7 @@
     {
       "id": "23",
       "title": "Uvod u PHP Programiranje",
-      "date": "15.02.2024.",
+      "date": "2024-05-03",
       "lecturer": "Elena Novak",
       "description": "Ova radionica pruža početnički prijateljski uvod u PHP programiranje. Polaznici će naučiti osnove PHP sintakse, varijable, kontrolne strukture i funkcije.",
       "applicants": [],
@@ -279,7 +279,7 @@
     {
       "id": "24",
       "title": "Napredno Korištenje React Redux-a",
-      "date": "06.12.2024.",
+      "date": "2024-04-29",
       "lecturer": "Ivan Horvat",
       "description": "Ova napredna radionica istražuje dublje koncepte upotrebe React Redux-a za upravljanje stanjem u velikim aplikacijama. Naučit ćete kako implementirati middleware, selektore i raditi s asinkronim akcijama.",
       "applicants": [],
@@ -291,7 +291,7 @@
     {
       "id": "25",
       "title": "Advanced WordPress Theme Development",
-      "date": "15.05.2024.",
+      "date": "2024-10-02",
       "lecturer": "Ivan Horvat",
       "description": "Explore advanced techniques for WordPress theme development, including custom post types, taxonomies, and template hierarchy. Learn how to create responsive and customizable themes to meet various client needs.",
       "applicants": [],
@@ -303,7 +303,7 @@
     {
       "id": "26",
       "title": "Building Scalable PHP Applications",
-      "date": "25.06.2024.",
+      "date": "2024-06-08",
       "lecturer": "Elena Novak",
       "description": "Dive deep into building scalable PHP applications using modern PHP frameworks and best practices. Cover topics such as MVC architecture, database abstraction layers, and caching strategies for optimal performance.",
       "applicants": [],
@@ -315,7 +315,7 @@
     {
       "id": "27",
       "title": "NextJS for Enterprise Applications",
-      "date": "10.07.2024.",
+      "date": "2024-07-20",
       "lecturer": "Ana Kovač",
       "description": "Discover how to leverage NextJS for building enterprise-grade web applications. Learn about server-side rendering, data fetching strategies, and authentication techniques to create fast, SEO-friendly, and secure applications.",
       "applicants": [],
@@ -327,7 +327,7 @@
     {
       "id": "28",
       "title": "WordPress Plugin Development Workshop",
-      "date": "05.08.2024.",
+      "date": "2024-07-22",
       "lecturer": "Ivan Horvat",
       "description": "Learn how to develop custom WordPress plugins to extend the functionality of your WordPress websites. Explore plugin architecture, hooks, filters, and best practices for writing secure and maintainable code.",
       "applicants": [],
@@ -339,7 +339,7 @@
     {
       "id": "29",
       "title": "Advanced PHP Security Practices",
-      "date": "20.09.2024.",
+      "date": "2024-08-24",
       "lecturer": "Elena Novak",
       "description": "Enhance your PHP development skills by mastering advanced security practices. Cover topics such as SQL injection prevention, cross-site scripting (XSS) mitigation, and secure session management techniques.",
       "applicants": [],
@@ -351,7 +351,7 @@
     {
       "id": "30",
       "title": "Optimizing WordPress Performance",
-      "date": "15.10.2024.",
+      "date": "2024-09-26",
       "lecturer": "Ivan Horvat",
       "description": "Improve the performance of your WordPress websites by learning optimization techniques. Explore caching strategies, image optimization, lazy loading, and CDN integration to deliver faster user experiences.",
       "applicants": [],
@@ -363,7 +363,7 @@
     {
       "id": "31",
       "title": "NextJS Authentication and Authorization",
-      "date": "10.11.2024.",
+      "date": "2024-05-17",
       "lecturer": "Ana Kovač",
       "description": "Implement authentication and authorization mechanisms in NextJS applications. Learn how to integrate popular authentication providers, set up protected routes, and manage user sessions securely.",
       "applicants": [],
@@ -375,7 +375,7 @@
     {
       "id": "32",
       "title": "WordPress Theme Customization Workshop",
-      "date": "05.12.2024.",
+      "date": "2024-03-03",
       "lecturer": "Ivan Horvat",
       "description": "Customize WordPress themes to match specific design requirements and client preferences. Cover topics such as child themes, theme options panels, and CSS styling techniques for creating unique and visually appealing websites.",
       "applicants": [],
@@ -387,7 +387,7 @@
     {
       "id": "33",
       "title": "Building Headless WordPress Websites with NextJS",
-      "date": "20.01.2024.",
+      "date": "2024-05-31",
       "lecturer": "Ana Kovač",
       "description": "Explore the headless architecture by building WordPress-powered websites with NextJS as the frontend framework. Learn how to set up decoupled WordPress instances, fetch data via REST API, and render content dynamically.",
       "applicants": [],
@@ -399,7 +399,7 @@
     {
       "id": "34",
       "title": "PHP Unit Testing Fundamentals",
-      "date": "15.02.2024.",
+      "date": "2024-05-14",
       "lecturer": "Elena Novak",
       "description": "Master the fundamentals of unit testing in PHP applications. Discover tools like PHPUnit, mocking libraries, and testing strategies for writing reliable and maintainable tests to ensure the quality of your codebase.",
       "applicants": [],
@@ -453,171 +453,29 @@
   ],
   "organizacije": [
     {
-      "id": "WebSolutions Inc.",
+      "id": "1",
       "name": "WebSolutions Inc.",
-      "description": "WebSolutions Inc. is an innovative company focusing on the development of modern web applications and solutions. Our team of experts is dedicated to providing high-quality services and creating standout user experiences.",
-      "workshops": [
-        {
-          "id": "1",
-          "title": "Uvod u React Hooks"
-        },
-        {
-          "id": "3",
-          "title": "Server-side rendering s Next.js"
-        },
-        {
-          "id": "20",
-          "title": "Deployanje React Aplikacija u Produkciju"
-        },
-        {
-          "id": "27",
-          "title": "NextJS for Enterprise Applications"
-        },
-        {
-          "id": "31",
-          "title": "NextJS Authentication and Authorization"
-        },
-        {
-          "id": "33",
-          "title": "Building Headless WordPress Websites with NextJS"
-        }
-      ]
+      "description": "WebSolutions Inc. is an innovative company focusing on the development of modern web applications and solutions. Our team of experts is dedicated to providing high-quality services and creating standout user experiences."
     },
     {
-      "id": "WebInnovators",
+      "id": "2",
       "name": "WebInnovators",
-      "description": "Placeholder description for WebInnovators.",
-      "workshops": [
-        {
-          "id": "2",
-          "title": "Napredno rutiranje u Expressu"
-        },
-        {
-          "id": "4",
-          "title": "Rukovanje obrascima u Reactu"
-        },
-        {
-          "id": "12",
-          "title": "Testiranje React Komponenti s Jest-om"
-        },
-        {
-          "id": "13",
-          "title": "RESTful API-ji s Node.js-om i Express-om"
-        },
-        {
-          "id": "14",
-          "title": "Upravljanje Stanjem s Context API-jem"
-        },
-        {
-          "id": "15",
-          "title": "Napredno Rutiranje u React-u s React Router-om"
-        },
-        {
-          "id": "16",
-          "title": "Osiguravanje Express Aplikacija s Helmet-om"
-        },
-        {
-          "id": "17",
-          "title": "Tehnike Optimizacije Performansi u React Aplikacijama"
-        }
-      ]
+      "description": "Placeholder description for WebInnovators."
     },
     {
-      "id": "TechGenius",
+      "id": "3",
       "name": "TechGenius",
-      "description": "Placeholder description for TechGenius.",
-      "workshops": [
-        {
-          "id": "5",
-          "title": "Autentikacija s Passport.js"
-        },
-        {
-          "id": "6",
-          "title": "Izgradnja API-ja s Expressom"
-        },
-        {
-          "id": "9",
-          "title": "Asinkrono programiranje u Expressu s Promiseima"
-        },
-        {
-          "id": "11",
-          "title": "Upravljanje Greškama u Express Aplikacijama"
-        },
-        {
-          "id": "19",
-          "title": "Izgradnja Realno-vremenskih Aplikacija s Socket.io"
-        }
-      ]
+      "description": "Placeholder description for TechGenius."
     },
     {
-      "id": "C",
+      "id": "4",
       "name": "WP Experts",
-      "description": "Placeholder description for WP Experts.",
-      "workshops": [
-        {
-          "id": "7",
-          "title": "Upravljanje stanjem u Reactu s Reduxom"
-        },
-        {
-          "id": "8",
-          "title": "Autentikacija u React aplikacijama s JWT-om"
-        },
-        {
-          "id": "10",
-          "title": "Tehnike optimizacije performansi u React aplikacijama"
-        },
-        {
-          "id": "24",
-          "title": "Napredno Korištenje React Redux-a"
-        },
-        {
-          "id": "25",
-          "title": "Advanced WordPress Theme Development"
-        },
-        {
-          "id": "28",
-          "title": "WordPress Plugin Development Workshop"
-        },
-        {
-          "id": "30",
-          "title": "Optimizing WordPress Performance"
-        },
-        {
-          "id": "32",
-          "title": "WordPress Theme Customization Workshop"
-        }
-      ]
+      "description": "Placeholder description for WP Experts."
     },
     {
-      "id": "CodeCrafters Ltd.",
+      "id": "5",
       "name": "CodeCrafters Ltd.",
-      "description": "Placeholder description for CodeCrafters Ltd.",
-      "workshops": [
-        {
-          "id": "21",
-          "title": "Izgradnja Dinamičkih Web Stranica s PHP-om"
-        },
-        {
-          "id": "23",
-          "title": "Uvod u PHP Programiranje"
-        },
-        {
-          "id": "25",
-          "title": "Izrada CMS-a s Laravel-om"
-        },
-        {
-          "id": "26",
-          "title": "Building Scalable PHP Applications"
-        },
-        {
-          "id": "29",
-          "title": "Advanced PHP Security Practices"
-        },
-        {
-          "id": "34",
-          "title": "PHP Unit Testing Fundamentals"
-        }
-      ]
+      "description": "Placeholder description for CodeCrafters Ltd."
     }
   ],
   "teme": [

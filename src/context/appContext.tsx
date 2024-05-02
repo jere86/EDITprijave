@@ -14,7 +14,12 @@ interface ContextProps {
   fetchWorkshops: () => void;
   lecturers?: Lecturer[];
   fetchLecturers: () => void;
+  organizations?: Organization[];
+  fetchOrganizations: () => void;
+  topicsData?: Options[];
+  difficultysData?: Options[];
 }
+
 export interface Workshop {
   id: string;
   title: string;
@@ -25,7 +30,9 @@ export interface Workshop {
   topic: string;
   difficulty: string;
   imageURL: string;
+  organization: string;
 }
+
 export interface Lecturer {
   id: string;
   name: string;
@@ -33,6 +40,17 @@ export interface Lecturer {
   organization: string;
   topics: string[];
   imageURL: string;
+}
+
+export interface Organization {
+  id: string;
+  name: string;
+  description: string;
+}
+
+export interface Options {
+  id: string;
+  name: string;
 }
 
 const AppContext = createContext<ContextProps | undefined>(undefined);
@@ -52,10 +70,22 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
   const [showAdmin, setShowAdmin] = useState<boolean>(false);
   const [workshops, setWorkshops] = useState<Workshop[] | undefined>(undefined);
   const [lecturers, setLecturers] = useState<Lecturer[] | undefined>(undefined);
+  const [organizations, setOrganizations] = useState<
+    Organization[] | undefined
+  >(undefined);
+  const [topicsData, setTopicsData] = useState<Options[] | undefined>(
+    undefined
+  );
+  const [difficultysData, setDifficultysData] = useState<Options[] | undefined>(
+    undefined
+  );
 
   useEffect(() => {
+    fetchTopicsData();
+    fetchDifficultysData();
     fetchWorkshops();
     fetchLecturers();
+    fetchOrganizations();
   }, []);
 
   const fetchWorkshops = async () => {
@@ -76,6 +106,33 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
     }
   };
 
+  const fetchOrganizations = async () => {
+    try {
+      const response = await axios.get("http://localhost:3001/organizacije");
+      setOrganizations(response.data);
+    } catch (error) {
+      console.error("Error fetching workshops:", error);
+    }
+  };
+
+  const fetchTopicsData = async () => {
+    try {
+      const response = await axios.get("http://localhost:3001/teme");
+      setTopicsData(response.data);
+    } catch (error) {
+      console.error("Error fetching topics: ", error);
+    }
+  };
+
+  const fetchDifficultysData = async () => {
+    try {
+      const response = await axios.get("http://localhost:3001/tezine");
+      setDifficultysData(response.data);
+    } catch (error) {
+      console.error("Error fetching difficultys: ", error);
+    }
+  };
+
   const toggleAdmin = () => {
     setShowAdmin((prevShowAdmin) => !prevShowAdmin);
   };
@@ -87,6 +144,10 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
     fetchWorkshops,
     lecturers,
     fetchLecturers,
+    organizations,
+    fetchOrganizations,
+    topicsData,
+    difficultysData,
   };
 
   return (

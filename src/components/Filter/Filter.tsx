@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./Filter.module.scss";
 
-interface FilterOption {
+interface Options {
   id: string;
   name: string;
 }
 
 interface FilterProps {
-  categories: FilterOption[];
+  categories: Options[];
   filterType: string;
   filters: { [key: string]: boolean };
   onFilterChange: (filterType: string, filterName: string) => void;

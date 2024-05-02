@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import styles from "./SignupModal.module.scss";
 import { Workshop, useAppContext } from "../../context/appContext";
@@ -25,19 +25,6 @@ const SignupModal: React.FC<SignupModalProps> = ({
   const [reason, setReason] = useState("");
   const [error, setError] = useState<boolean>(false);
   const [showThx, setShowThx] = useState<boolean>(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    function handleScroll() {
-      setScrollPosition(window.scrollY);
-    }
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [fetchWorkshops]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -54,12 +41,7 @@ const SignupModal: React.FC<SignupModalProps> = ({
   };
 
   return (
-    <div
-      className={styles.modal}
-      style={{
-        top: `${scrollPosition}px`,
-      }}
-    >
+    <div className={styles.modal}>
       <div className={showThx ? styles.thx : styles.application}>
         {showThx ? (
           <>

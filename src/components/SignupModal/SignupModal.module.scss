@@ -7,7 +7,7 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  z-index: 5;
+  z-index: 10;
   background-color: rgba(0, 0, 0, 0.5);
 
   .application,
@@ -40,12 +40,17 @@
       justify-content: center;
       width: 90%;
       text-align: center;
+      text-transform: uppercase;
       font-size: 1.2rem;
+      font-weight: bold;
+      color: #0087ad;
 
       span {
         font-size: 2rem;
         font-weight: bold;
         margin: 0.5rem 0;
+        text-transform: initial;
+        color: black;
       }
     }
 
