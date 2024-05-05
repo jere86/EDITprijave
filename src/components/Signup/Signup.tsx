@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Workshop, useAppContext } from "../../context/appContext";
 import styles from "./Signup.module.scss";
 import { FaTimes } from "react-icons/fa";
@@ -83,11 +83,14 @@ const Signup: React.FC<SignupProps> = ({ onClose, onSignup, data }) => {
         email: formData.email,
         reason: formData.reason,
       });
-      fetchWorkshops();
     } catch (error) {
       console.error("Error submitting data:", error);
     }
   };
+
+  useEffect(() => {
+    fetchWorkshops();
+  }, [fetchWorkshops, showThx]);
 
   return (
     <div className={styles.modal}>
