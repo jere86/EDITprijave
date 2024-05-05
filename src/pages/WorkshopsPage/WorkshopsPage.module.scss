@@ -1,4 +1,4 @@
-.workshop {
+.workshops {
   display: flex;
   flex-direction: column;
   padding: 2rem;
@@ -13,7 +13,7 @@
     align-self: flex-end;
     height: 3rem;
     width: max-content;
-    margin: -1rem 0 -2rem;
+    margin: 0 0 -3rem;
     z-index: 5;
 
     .admin_btn {
@@ -51,6 +51,7 @@
     .filters {
       display: flex;
       flex-direction: column;
+      width: 85%;
       margin-bottom: 1rem;
     }
 

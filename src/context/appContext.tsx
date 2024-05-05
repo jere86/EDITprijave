@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, {
   createContext,
   useContext,
@@ -6,19 +5,7 @@ import React, {
   ReactNode,
   useEffect,
 } from "react";
-
-interface ContextProps {
-  showAdmin: boolean;
-  toggleAdmin: () => void;
-  workshops?: Workshop[];
-  fetchWorkshops: () => void;
-  lecturers?: Lecturer[];
-  fetchLecturers: () => void;
-  organizations?: Organization[];
-  fetchOrganizations: () => void;
-  topicsData?: Options[];
-  difficultysData?: Options[];
-}
+import axios from "axios";
 
 export interface Workshop {
   id: string;
@@ -51,6 +38,19 @@ export interface Organization {
 export interface Options {
   id: string;
   name: string;
+}
+
+interface ContextProps {
+  showAdmin: boolean;
+  toggleAdmin: () => void;
+  workshops?: Workshop[];
+  fetchWorkshops: () => void;
+  lecturers?: Lecturer[];
+  fetchLecturers: () => void;
+  organizations?: Organization[];
+  fetchOrganizations: () => void;
+  topicsData?: Options[];
+  difficultysData?: Options[];
 }
 
 const AppContext = createContext<ContextProps | undefined>(undefined);
@@ -91,7 +91,9 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
   const fetchWorkshops = async () => {
     try {
       const response = await axios.get("http://localhost:3001/radionice");
-      setWorkshops(response.data);
+      if (response.data) {
+        setWorkshops(response.data);
+      }
     } catch (error) {
       console.error("Error fetching workshops:", error);
     }
@@ -100,7 +102,9 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
   const fetchLecturers = async () => {
     try {
       const response = await axios.get("http://localhost:3001/predavaci");
-      setLecturers(response.data);
+      if (response.data) {
+        setLecturers(response.data);
+      }
     } catch (error) {
       console.error("Error fetching workshops:", error);
     }
@@ -109,7 +113,9 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
   const fetchOrganizations = async () => {
     try {
       const response = await axios.get("http://localhost:3001/organizacije");
-      setOrganizations(response.data);
+      if (response.data) {
+        setOrganizations(response.data);
+      }
     } catch (error) {
       console.error("Error fetching workshops:", error);
     }
@@ -118,7 +124,9 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
   const fetchTopicsData = async () => {
     try {
       const response = await axios.get("http://localhost:3001/teme");
-      setTopicsData(response.data);
+      if (response.data) {
+        setTopicsData(response.data);
+      }
     } catch (error) {
       console.error("Error fetching topics: ", error);
     }
@@ -127,7 +135,9 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
   const fetchDifficultysData = async () => {
     try {
       const response = await axios.get("http://localhost:3001/tezine");
-      setDifficultysData(response.data);
+      if (response.data) {
+        setDifficultysData(response.data);
+      }
     } catch (error) {
       console.error("Error fetching difficultys: ", error);
     }

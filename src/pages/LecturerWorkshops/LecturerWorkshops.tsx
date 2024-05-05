@@ -3,11 +3,10 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { Lecturer, useAppContext } from "../../context/appContext";
 import WorkshopCard from "../../components/WorkshopCard/WorkshopCard";
+import styles from "./LecturerWorkshops.module.scss";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
-import styles from "./LecturerPage.module.scss";
-
-const LecturerPage: React.FC = () => {
+const LecturerWorkshops: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { workshops } = useAppContext();
   const [lecturerData, setLecturerData] = useState<Lecturer>();
@@ -42,8 +41,8 @@ const LecturerPage: React.FC = () => {
       <Link to={`/predavaci`} className={styles.return_btn}>
         <IoMdArrowRoundBack />
       </Link>
-      <p className={styles.title}>{lecturerData?.name}</p>
       <p className={styles.subtitle}>radionice predavača </p>
+      <p className={styles.title}>{lecturerData?.name}</p>
       <div className={styles.list}>
         {filteredWorkshops?.map((workshop) => (
           <WorkshopCard data={workshop} key={workshop.id} />
@@ -53,4 +52,4 @@ const LecturerPage: React.FC = () => {
   );
 };
 
-export default LecturerPage;
+export default LecturerWorkshops;

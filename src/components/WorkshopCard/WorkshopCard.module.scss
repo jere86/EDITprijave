@@ -1,10 +1,11 @@
 .card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   border-radius: 0.5rem;
   border: 2px solid #0087ad;
   padding: 1rem;
-  text-wrap: balance;
+  text-wrap: pretty;
   background: linear-gradient(
     0deg,
     rgba(128, 128, 128, 0.15) 0%,
@@ -12,8 +13,15 @@
   );
 
   .image {
-    width: 10rem;
-    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 15rem;
+    height: 15rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid #0087ad;
+    overflow: hidden;
 
     img {
       width: 100%;
@@ -72,6 +80,7 @@
       border-radius: 0.25rem;
       background-color: #0087ad;
       color: white;
+      font-weight: bold;
 
       &:hover {
         cursor: pointer;

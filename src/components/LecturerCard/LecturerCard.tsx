@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { FiEdit3 } from "react-icons/fi";
-import { Lecturer, useAppContext } from "../../context/appContext";
-import styles from "./LecturerCard.module.scss";
 import { Link } from "react-router-dom";
+import { Lecturer, useAppContext } from "../../context/appContext";
 import AddEditForm from "../AddEditForm/AddEditForm";
+import { FiEdit3 } from "react-icons/fi";
 import { ThreeDots } from "react-loader-spinner";
+import styles from "./LecturerCard.module.scss";
 
 interface LecturerCardProps {
   data: Lecturer;
@@ -32,7 +32,13 @@ const LecturerCard: React.FC<LecturerCardProps> = ({ data }) => {
       {!loading ? (
         <div className={styles.card}>
           <div className={styles.image}>
-            <img src={data.imageURL} alt="Digital Dalmacija" />
+            <img
+              src={
+                data.imageURL ||
+                "https://cdn-icons-png.flaticon.com/512/2815/2815428.png"
+              }
+              alt="Digital Dalmacija"
+            />
           </div>
           <div className={styles.data}>
             <h1>{data.name}</h1>
@@ -52,9 +58,9 @@ const LecturerCard: React.FC<LecturerCardProps> = ({ data }) => {
               <b>
                 <i>teme: </i>
               </b>
-              {data.topics.map((topic, id) => (
-                <span key={id}>{topic} </span>
-              ))}
+              {data.topics.map((topic, index) =>
+                index === 0 ? topic : `, ${topic}`
+              )}
             </p>
             {showAdmin && (
               <button className={styles.edit} onClick={toggleWorkshopAddForm}>
@@ -62,7 +68,7 @@ const LecturerCard: React.FC<LecturerCardProps> = ({ data }) => {
               </button>
             )}
             <Link to={`/predavaci/${data.id}`} className={styles.view}>
-              Pregledaj radionice
+              PREGLEDAJ RADIONICE
             </Link>
           </div>
         </div>

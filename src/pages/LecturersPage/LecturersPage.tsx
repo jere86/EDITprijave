@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { GrWorkshop } from "react-icons/gr";
 import { Lecturer, useAppContext } from "../../context/appContext";
-import LecturerCard from "../../components/LecturerCard/LecturerCard";
 import Filters from "../../components/Filter/Filter";
-import styles from "../WorkshopsPage/WorkshopsPage.module.scss";
 import AddEditForm from "../../components/AddEditForm/AddEditForm";
+import LecturerCard from "../../components/LecturerCard/LecturerCard";
+import styles from "../WorkshopsPage/WorkshopsPage.module.scss";
+import { GrWorkshop } from "react-icons/gr";
 
 interface Filters {
   [key: string]: boolean;
@@ -73,7 +73,7 @@ const LecturersPage: React.FC = () => {
   };
 
   return (
-    <div className={styles.workshop}>
+    <div className={styles.workshops}>
       {showAdmin && (
         <div className={styles.add}>
           <button className={styles.admin_btn} onClick={toggleAddEditForm}>

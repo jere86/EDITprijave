@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { FiEdit3 } from "react-icons/fi";
-import { Workshop, useAppContext } from "../../context/appContext";
-import SignupModal from "../SignupModal/SignupModal";
-
-import styles from "./WorkshopCard.module.scss";
-import axios from "axios";
-import AddEditForm from "../AddEditForm/AddEditForm";
 import { ThreeDots } from "react-loader-spinner";
+import axios from "axios";
+import SignupModal from "../Signup/Signup";
+import AddEditForm from "../AddEditForm/AddEditForm";
+import { Workshop, useAppContext } from "../../context/appContext";
+import styles from "./WorkshopCard.module.scss";
+import { FiEdit3 } from "react-icons/fi";
 
 interface WorkshopCardProps {
   data: Workshop;

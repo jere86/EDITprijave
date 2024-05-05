@@ -8,7 +8,6 @@ import {
   Workshop,
   useAppContext,
 } from "../../context/appContext";
-
 import styles from "./AddEditForm.module.scss";
 import { FaTimes } from "react-icons/fa";
 
@@ -34,8 +33,36 @@ const AddEditForm: React.FC<AddEditFormProps> = ({
     topicsData,
     difficultysData,
   } = useAppContext();
-  const [formData, setFormData] = useState<any>(() => {
-    if (itemType === "radionice") {
+  const initializeErrors = (type: string) => {
+    let errors: any = {};
+    if (type === "radionice") {
+      errors = {
+        title: "",
+        date: "",
+        lecturer: "",
+        description: "",
+        topic: "",
+        difficulty: "",
+        imageURL: "",
+      };
+    } else if (type === "predavaci") {
+      errors = {
+        name: "",
+        bio: "",
+        organization: "",
+        topics: "",
+        imageURL: "",
+      };
+    } else if (type === "organizacije") {
+      errors = {
+        name: "",
+        description: "",
+      };
+    }
+    return errors;
+  };
+  const initializeFormData = (type: string) => {
+    if (type === "radionice") {
       return {
         id: v4(),
         title: "",
@@ -46,9 +73,8 @@ const AddEditForm: React.FC<AddEditFormProps> = ({
         topic: "",
         difficulty: "",
         imageURL: "",
-        organization: "",
       } as Workshop;
-    } else if (itemType === "predavaci") {
+    } else if (type === "predavaci") {
       return {
         id: v4(),
         name: "",
@@ -57,7 +83,7 @@ const AddEditForm: React.FC<AddEditFormProps> = ({
         topics: [],
         imageURL: "",
       } as Lecturer;
-    } else if (itemType === "organizacije") {
+    } else if (type === "organizacije") {
       return {
         id: v4(),
         name: "",
@@ -65,21 +91,32 @@ const AddEditForm: React.FC<AddEditFormProps> = ({
       } as Organization;
     }
     return undefined;
+  };
+  const [formData, setFormData] = useState<any>(() => {
+    return initializeFormData(itemType);
   });
+  const [errors, setErrors] = useState<any>(() => {
+    return initializeErrors(itemType);
+  });
+  const errorMessages: { [key: string]: string } = {
+    title: "*unesite naslov",
+    date: "*unesite datum",
+    lecturer: "*odaberite predavača",
+    description: "*unesite opis",
+    topic: "*odaberite temu",
+    topics: "*odaberite teme",
+    difficulty: "*odaberite težinu",
+    imageURL: "*unesite URL slike",
+    name: "*unesite puno ime predavača",
+    bio: "*unesite kratku biografiju",
+    organization: "*odaberite organizaciju",
+  };
 
   useEffect(() => {
     if (mode === "edit" && item) {
-      if (itemType === "radionice") {
-        setFormData(item as Workshop);
-      }
-      if (itemType === "organizacije") {
-        setFormData(item as Organization);
-      }
-      if (itemType === "predavaci") {
-        setFormData(item as Lecturer);
-      }
+      setFormData(item);
     }
-  }, [mode, item, itemType]);
+  }, [mode, item]);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -87,14 +124,51 @@ const AddEditForm: React.FC<AddEditFormProps> = ({
     >
   ) => {
     const { name, value } = e.target;
-    setFormData((prevData: any) => ({
-      ...prevData,
-      [name]: value,
+    if (name === "topics") {
+      const target = e.target as HTMLSelectElement;
+      const selectedOptions = Array.from(
+        target.selectedOptions,
+        (option) => (option as HTMLOptionElement).value
+      );
+      setFormData((prevData: any) => ({
+        ...prevData,
+        [name]: selectedOptions || [],
+      }));
+    } else {
+      setFormData((prevData: any) => ({
+        ...prevData,
+        [name]: value || "",
+      }));
+    }
+    setErrors((prevErrors: any) => ({
+      ...prevErrors,
+      [name]: "",
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    let formValid = true;
+    const newErrors = initializeErrors(itemType);
+
+    for (const key in formData) {
+      if (!formData[key]) {
+        newErrors[key] = errorMessages[key];
+        setErrors(newErrors);
+        formValid = false;
+      }
+    }
+
+    if (itemType === "predavaci" && formData.topics.length === 0) {
+      newErrors["topics"] = errorMessages["topics"];
+      setErrors(newErrors);
+      formValid = false;
+    }
+
+    setErrors(newErrors);
+
+    if (!formValid) return;
+
     try {
       if (mode === "edit") {
         await axios.patch(
@@ -104,36 +178,7 @@ const AddEditForm: React.FC<AddEditFormProps> = ({
       } else {
         await axios.post(`http://localhost:3001/${itemType}`, formData);
       }
-
-      if (itemType === "radionice") {
-        setFormData({
-          id: v4(),
-          title: "",
-          date: "",
-          lecturer: "",
-          description: "",
-          applicants: [],
-          topic: "",
-          difficulty: "",
-          imageURL: "",
-          organization: "",
-        });
-      } else if (itemType === "predavaci") {
-        setFormData({
-          id: v4(),
-          name: "",
-          bio: "",
-          organization: "",
-          topics: [],
-          imageURL: "",
-        });
-      } else if (itemType === "organizacije") {
-        setFormData({
-          id: v4(),
-          name: "",
-          description: "",
-        });
-      }
+      setFormData(initializeFormData(itemType));
       fetchWorkshops();
       fetchLecturers();
       fetchOrganizations();
@@ -149,163 +194,191 @@ const AddEditForm: React.FC<AddEditFormProps> = ({
         <button onClick={onClose} className={styles.close_btn}>
           <FaTimes />
         </button>
-        <h2>{mode === "edit" ? `Edit ${itemType}` : `Add New ${itemType}`}</h2>
+        <h1>
+          {mode === "edit"
+            ? `Uredi ${
+                itemType === "radionice"
+                  ? "radionicu"
+                  : itemType === "predavaci"
+                  ? "predavača"
+                  : "organizaciju"
+              }`
+            : `Dodaj ${
+                itemType === "radionice"
+                  ? "novu radionicu"
+                  : itemType === "predavaci"
+                  ? "novog predavača"
+                  : "novu organizaciju"
+              }`}
+        </h1>
         <form onSubmit={handleSubmit}>
           {itemType === "radionice" && (
-            <>
-              <label>
-                Title:
-                <input
-                  type="text"
-                  name="title"
-                  value={formData.title}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-              <label>
-                Date:
-                <input
-                  type="date"
-                  name="date"
-                  value={formData.date}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-              <label>
-                Lecturer:
-                <select
-                  name="lecturer"
-                  value={formData.lecturer}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="">Select Lecturer</option>
-                  {lecturers?.map((lecturer) => (
-                    <option key={lecturer.id} value={lecturer.name}>
-                      {lecturer.name}
+            <div className={styles.workshopForm}>
+              <div>
+                <div>
+                  <input
+                    type="text"
+                    name="title"
+                    placeholder="naziv"
+                    value={formData.title}
+                    onChange={handleChange}
+                  />
+                  <p className={styles.error}>{errors.title}</p>
+                  <input
+                    type="date"
+                    name="date"
+                    placeholder="datum"
+                    value={formData.date}
+                    onChange={handleChange}
+                  />
+                  <p className={styles.error}>{errors.date}</p>
+                  <input
+                    type="text"
+                    name="imageURL"
+                    placeholder="URL_slike"
+                    value={formData.imageURL}
+                    onChange={handleChange}
+                  />
+                  <p className={styles.error}>{errors.imageURL}</p>
+                </div>
+                <div>
+                  <select
+                    name="lecturer"
+                    value={formData.lecturer}
+                    onChange={handleChange}
+                  >
+                    <option value="" disabled hidden>
+                      predavač
                     </option>
-                  ))}
-                </select>
-              </label>
-              <label>
-                Description:
-                <textarea
-                  name="description"
-                  value={formData.description}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-              <label>
-                Topic:
-                <select
-                  name="topic"
-                  value={formData.topic}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="">Select Topic</option>
-                  {topicsData?.map((topic) => (
-                    <option key={topic.id} value={topic.name}>
-                      {topic.name}
+                    {lecturers?.map((lecturer) => (
+                      <option key={lecturer.id} value={lecturer.name}>
+                        {lecturer.name}
+                      </option>
+                    ))}
+                  </select>
+                  <p className={styles.error}>{errors.lecturer}</p>
+                  <select
+                    name="topic"
+                    value={formData.topic}
+                    onChange={handleChange}
+                  >
+                    <option value="" disabled hidden>
+                      tema
                     </option>
-                  ))}
-                </select>
-              </label>
-              <label>
-                Difficulty:
-                <select
-                  name="difficulty"
-                  value={formData.difficulty}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="">Select Difficulty</option>
-                  {difficultysData?.map((difficulty) => (
-                    <option key={difficulty.id} value={difficulty.name}>
-                      {difficulty.name}
+                    {topicsData?.map((topic) => (
+                      <option key={topic.id} value={topic.name}>
+                        {topic.name}
+                      </option>
+                    ))}
+                  </select>
+                  <p className={styles.error}>{errors.topic}</p>
+                  <select
+                    name="difficulty"
+                    value={formData.difficulty}
+                    onChange={handleChange}
+                  >
+                    <option value="" disabled hidden>
+                      težina
                     </option>
-                  ))}
-                </select>
-              </label>
-              <label>
-                Image URL:
-                <input
-                  type="url"
-                  name="imageURL"
-                  value={formData.imageURL}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-            </>
+                    {difficultysData?.map((difficulty) => (
+                      <option key={difficulty.id} value={difficulty.name}>
+                        {difficulty.name}
+                      </option>
+                    ))}
+                  </select>
+                  <p className={styles.error}>{errors.difficulty}</p>
+                </div>
+              </div>
+              <textarea
+                name="description"
+                placeholder="kratki_opis"
+                value={formData.description}
+                onChange={handleChange}
+              />
+              <p className={styles.error}>{errors.description}</p>
+            </div>
           )}
           {itemType === "predavaci" && (
             <>
-              <label>
-                Ime predavača:
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-              <label>
-                Bio:
-                <textarea
-                  name="bio"
-                  value={formData.bio}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-              <label>
-                Organization:
-                <select
-                  name="organization"
-                  value={formData.organization}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="">Select Organization</option>
-                  {organizations?.map((organization) => (
-                    <option key={organization.id} value={organization.name}>
-                      {organization.name}
-                    </option>
-                  ))}
-                </select>
-              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="puno_ime_predavača"
+                value={formData.name}
+                onChange={handleChange}
+              />
+              <p className={styles.error}>{errors.name}</p>
+              <textarea
+                name="bio"
+                placeholder="kratka_biografija"
+                value={formData.bio}
+                onChange={handleChange}
+              />
+              <p className={styles.error}>{errors.bio}</p>
+              <select
+                name="organization"
+                value={formData.organization}
+                onChange={handleChange}
+              >
+                <option value="" disabled hidden>
+                  organizacija
+                </option>
+                {organizations?.map((organization) => (
+                  <option key={organization.id} value={organization.name}>
+                    {organization.name}
+                  </option>
+                ))}
+              </select>
+              <p className={styles.error}>{errors.organization}</p>
+              <select
+                name="topics"
+                className={styles.multiple}
+                value={formData.topics}
+                onChange={handleChange}
+                multiple
+              >
+                <option value="" disabled hidden>
+                  teme
+                </option>
+                {topicsData?.map((topic) => (
+                  <option key={topic.id} value={topic.name}>
+                    {topic.name}
+                  </option>
+                ))}
+              </select>
+              <p className={styles.error}>
+                {errors.topics} <span>*Ctrl+Click za odabir više tema</span>
+              </p>
+              <input
+                type="text"
+                name="imageURL"
+                placeholder="URL_slike"
+                value={formData.imageURL}
+                onChange={handleChange}
+              />
+              <p className={styles.error}>{errors.imageURL}</p>
             </>
           )}
           {itemType === "organizacije" && (
             <>
-              <label>
-                Organization Name:
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
-              <label>
-                Description:
-                <textarea
-                  name="description"
-                  value={formData.description}
-                  onChange={handleChange}
-                  required
-                />
-              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="ime_organizacije"
+                value={formData.name}
+                onChange={handleChange}
+              />
+              <p className={styles.error}>{errors.name}</p>
+              <textarea
+                name="description"
+                placeholder="kratki_opis"
+                value={formData.description}
+                onChange={handleChange}
+              />
+              <p className={styles.error}>{errors.description}</p>
             </>
           )}
-
-          <button type="submit">{mode === "edit" ? "Edit" : "Submit"}</button>
+          <button type="submit">{mode === "edit" ? "Uredi" : "Dodaj"}</button>
         </form>
       </div>
     </div>
